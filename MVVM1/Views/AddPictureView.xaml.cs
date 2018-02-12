@@ -16,13 +16,14 @@ using System.Windows.Shapes;
 namespace MVVM1.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for StudentView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class AddPictureView : UserControl
     {
-        public HomeView()
+        public AddPictureView()
         {
             InitializeComponent();
+            this.DataContext = new MVVM1.ViewModel.AddPictureViewModel();
         }
     }
 }

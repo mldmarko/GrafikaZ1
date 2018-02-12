@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="MVVM1.Views.AddPictureView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVM1.Views"
+             xmlns:viewModel="clr-namespace:MVVM1.ViewModel"
+             xmlns:vml="clr-namespace:MVVM1.VML"
+             vml:ViewModelLocator.AutoHookedUpViewModel="True"
+             xmlns:data="clr-namespace:MVVM1.Model"
+             mc:Ignorable="d" Width="422.368" Height="319.737">
+
+    <Grid Height="322" VerticalAlignment="Top" Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="labelTitle" Content="TITLE:" HorizontalAlignment="Left" Height="24" Margin="10,10,0,0" VerticalAlignment="Top" Width="77"/>
+        <Label x:Name="labelText" Content="Description:" HorizontalAlignment="Left" Height="23" Margin="10,73,0,0" VerticalAlignment="Top" Width="77"/>
+        <Label x:Name="Photo" Content="COVER PHOTO:" HorizontalAlignment="Left" Height="24" Margin="10,151,0,0" VerticalAlignment="Top" Width="94"/>
+        <TextBox x:Name="textBoxTitle" HorizontalAlignment="Left" Height="24" Margin="87,10,0,0" TextWrapping="Wrap" Text="{Binding MyPicture.Name, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="324"/>
+        <TextBox  x:Name="textBoxText" HorizontalAlignment="Left" Height="59" Margin="87,73,0,0" TextWrapping="Wrap" Text="{Binding MyPicture.Description, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="324"/>
+
+        <Rectangle Fill="#FF707070" HorizontalAlignment="Left" Height="5" Margin="10,226,-8,0" VerticalAlignment="Top" Width="420" Grid.ColumnSpan="2"/>
+        <Button Content="ADD" Command ="{Binding AddCommand}" HorizontalAlignment="Left" Height="30" Margin="156,236,0,0" VerticalAlignment="Top" Width="121" />
+        <Button Content="BROWSE..."  Command ="{Binding BrowseCommand}"  HorizontalAlignment="Left" Margin="132,151,0,0" VerticalAlignment="Top" Width="169" Height="24"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="325,151,0,0" VerticalAlignment="Top" Width="86" Name="CoverPhoto" RenderTransformOrigin="0.501,0.203" Source="{Binding MyPictureSource, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+
+</UserControl>

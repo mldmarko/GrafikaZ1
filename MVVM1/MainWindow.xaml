@@ -7,16 +7,22 @@
         xmlns:views="clr-namespace:MVVM1.Views"
         xmlns:viewModel="clr-namespace:MVVM1.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="525" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
     <Window.Resources>
-        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
-            <views:HomeView/>
+        <DataTemplate DataType="{x:Type viewModel:PicturesViewModel}">
+            <views:PicturesView/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:StudentViewModel}">
-            <views:StudentView/>
+        <DataTemplate DataType="{x:Type viewModel:AddPictureViewModel}">
+            <views:AddPictureView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ChangeProfilViewModel}">
+            <views:ChangeProfilView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <views:LoginView/>
         </DataTemplate>
     </Window.Resources>
     <Grid>
@@ -27,10 +33,13 @@
 
         <DockPanel Grid.Row="0" Margin="5">
             <Menu DockPanel.Dock="Top">
-                <MenuItem Header="Home" Command="{Binding NavCommand}"
-                          CommandParameter="home"/>
-                <MenuItem Header="List View" Command="{Binding NavCommand}"
-                          CommandParameter="student"/>
+                <MenuItem Header="Pictures" Command="{Binding NavCommand}"
+                          CommandParameter="pictures"/>
+                <MenuItem Header="Add picture" Command="{Binding NavCommand}"
+                          CommandParameter="addPicture"/>
+                <MenuItem Header="Change profil" Command="{Binding NavCommand}"
+                          CommandParameter="changeProfil"/>
+            
             </Menu>
         </DockPanel>
         <Grid Grid.Row="1">
